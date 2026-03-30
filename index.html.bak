@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spell — 姓名判断</title>
+  <meta name="description" content="名前に宿る運命を読み解く。五格姓名判断。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo-wrap">
+      <div class="logo">Spell</div>
+    </div>
+    <p class="tagline">すべての名には、秘められた<ruby>呪文<rt>スペル</rt></ruby>がある。</p>
+    <div class="divider"></div>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <div class="corner-tr"></div>
+      <div class="corner-bl"></div>
+      <p class="form-title">— 姓名を入力してください —</p>
+
+      <form id="spell-form">
+        <div class="input-group">
+          <label for="sei">苗字（漢字）</label>
+          <input type="text" id="sei" name="sei" placeholder="例：伊織" maxlength="6" autocomplete="off">
+        </div>
+        <div class="input-group">
+          <label for="mei">名前（漢字）</label>
+          <input type="text" id="mei" name="mei" placeholder="例：蒼" maxlength="6" autocomplete="off">
+        </div>
+        <button type="submit" class="submit-btn">
+          <span>— スペルを解放 —</span>
+        </button>
+      </form>
+    </section>
+
+    <div id="result-area"></div>
+  </main>
+
+  <footer>
+    <p>SPELL &nbsp;—&nbsp; The Art of Names</p>
+  </footer>
+
+  <script src="kanji-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
