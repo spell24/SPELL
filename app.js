@@ -553,14 +553,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     resultArea.querySelector('.save-img-btn').addEventListener('click', () => {
-      html2canvas(resultArea, { backgroundColor: '#07070f', scale: 2, useCORS: true, allowTaint: true }).then(canvas => {
+      htmlToImage.toPng(resultArea, { pixelRatio: 2 }).then(dataUrl => {
         const a = document.createElement('a');
         a.download = 'spell-result.png';
-        a.href = canvas.toDataURL('image/png');
+        a.href = dataUrl;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
-      }).catch(err => console.error('html2canvas error:', err));
+      }).catch(err => console.error('html-to-image error:', err));
     });
   });
 });
