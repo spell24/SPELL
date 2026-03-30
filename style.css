@@ -55,7 +55,7 @@ body::before {
 header {
   position: relative;
   text-align: center;
-  padding: 60px 20px 40px;
+  padding: 60px 20px 16px;
   z-index: 1;
 }
 
@@ -134,7 +134,7 @@ header {
   position: relative;
   z-index: 1;
   line-height: 1;
-  padding: 40px 20px;
+  padding: 16px 20px;
 }
 
 .tagline {
@@ -1216,4 +1216,56 @@ footer p {
   font-size: 1rem;
   color: var(--text);
   letter-spacing: 0.1em;
+}
+
+.share-area {
+  text-align: center;
+  margin: 24px 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 12px 28px;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.share-btn:hover {
+  background: #222;
+}
+
+.share-icon {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.save-img-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+  padding: 12px 28px;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.save-img-btn:hover {
+  background: var(--glow-gold);
 }

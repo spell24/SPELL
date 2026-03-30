@@ -390,9 +390,14 @@ function renderResult(sei, mei, result) {
     ${unknownWarning}
     ${renderNameChart(sei, mei, result)}
     <div class="share-area">
-      <button class="share-btn" onclick="shareOnX('${sei}','${mei}',${JSON.stringify(grade)},${JSON.stringify({ten,chi,jin,gai,so})})">
+      <button class="share-btn"
+        data-sei="${sei}"
+        data-mei="${mei}"
+        data-grade='${JSON.stringify(grade)}'
+        data-result='${JSON.stringify({ten,chi,jin,gai,so})}'>
         <span class="share-icon">𝕏</span><span>結果をポスト</span>
       </button>
+      <button class="save-img-btn">📷 画像を保存</button>
     </div>
     <div class="detail-divider"><span>— 五格の詳しい解説 —</span></div>
     <div class="kaku-grid">
@@ -536,5 +541,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // キラン演出（チャート展開と同時）
     const chart = resultArea.querySelector('.name-chart');
     if (chart) setTimeout(() => playKiran(chart), 80);
+
+    resultArea.querySelector('.share-btn').addEventListener('click', (e) => {
+      const btn = e.currentTarget;
+      shareOnX(
+        btn.dataset.sei,
+        btn.dataset.mei,
+        JSON.parse(btn.dataset.grade),
+        JSON.parse(btn.dataset.result)
+      );
+    });
+
+    resultArea.querySelector('.save-img-btn').addEventListener('click', () => {
+      html2canvas(resultArea, { backgroundColor: '#07070f', scale: 2 }).then(canvas => {
+        const a = document.createElement('a');
+        a.download = 'spell-result.png';
+        a.href = canvas.toDataURL('image/png');
+        a.click();
+      });
+    });
   });
 });
