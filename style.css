@@ -91,6 +91,39 @@ header {
   to   { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
+.header-monster--side {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  margin-left: 4px;
+}
+
+.header-monsters {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+}
+
+.header-monster {
+  width: clamp(50px, 8vw, 100px);
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.header-monster--center {
+  display: block;
+  margin: 0 auto 8px;
+}
+
+.logo-img {
+  width: clamp(240px, 55vw, 380px);
+  height: auto;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 0 20px rgba(201,168,76,0.5));
+}
+
 .logo {
   font-family: 'Cinzel', serif;
   font-size: clamp(3rem, 8vw, 5rem);
